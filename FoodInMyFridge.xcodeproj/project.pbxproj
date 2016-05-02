@@ -7,14 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB50F9D01CC6292800911004 /* EditFoodItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB50F9CF1CC6292800911004 /* EditFoodItemViewController.swift */; };
 		AB8125FF1CC5736D00B11D91 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8125FE1CC5736D00B11D91 /* AppDelegate.swift */; };
-		AB8126011CC5736D00B11D91 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8126001CC5736D00B11D91 /* ViewController.swift */; };
 		AB8126041CC5736D00B11D91 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB8126021CC5736D00B11D91 /* Main.storyboard */; };
 		AB8126071CC5736D00B11D91 /* FoodInMyFridge.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AB8126051CC5736D00B11D91 /* FoodInMyFridge.xcdatamodeld */; };
 		AB8126091CC5736D00B11D91 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB8126081CC5736D00B11D91 /* Assets.xcassets */; };
 		AB81260C1CC5736D00B11D91 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB81260A1CC5736D00B11D91 /* LaunchScreen.storyboard */; };
 		AB8126171CC5736D00B11D91 /* FoodInMyFridgeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8126161CC5736D00B11D91 /* FoodInMyFridgeTests.swift */; };
 		AB8126221CC5736D00B11D91 /* FoodInMyFridgeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8126211CC5736D00B11D91 /* FoodInMyFridgeUITests.swift */; };
+		AB8126301CC5759200B11D91 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB81262F1CC5759200B11D91 /* MainTableViewController.swift */; };
+		AB8126321CC575DF00B11D91 /* AddFoodItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8126311CC575DF00B11D91 /* AddFoodItemViewController.swift */; };
+		AB8126341CC578C700B11D91 /* MainTableViewCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8126331CC578C700B11D91 /* MainTableViewCellController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,9 +38,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AB50F9CF1CC6292800911004 /* EditFoodItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditFoodItemViewController.swift; sourceTree = "<group>"; };
 		AB8125FB1CC5736D00B11D91 /* FoodInMyFridge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodInMyFridge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB8125FE1CC5736D00B11D91 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AB8126001CC5736D00B11D91 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		AB8126031CC5736D00B11D91 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AB8126061CC5736D00B11D91 /* FoodInMyFridge.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FoodInMyFridge.xcdatamodel; sourceTree = "<group>"; };
 		AB8126081CC5736D00B11D91 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +52,9 @@
 		AB81261D1CC5736D00B11D91 /* FoodInMyFridgeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FoodInMyFridgeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB8126211CC5736D00B11D91 /* FoodInMyFridgeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodInMyFridgeUITests.swift; sourceTree = "<group>"; };
 		AB8126231CC5736D00B11D91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AB81262F1CC5759200B11D91 /* MainTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
+		AB8126311CC575DF00B11D91 /* AddFoodItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFoodItemViewController.swift; sourceTree = "<group>"; };
+		AB8126331CC578C700B11D91 /* MainTableViewCellController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewCellController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,7 +106,10 @@
 			isa = PBXGroup;
 			children = (
 				AB8125FE1CC5736D00B11D91 /* AppDelegate.swift */,
-				AB8126001CC5736D00B11D91 /* ViewController.swift */,
+				AB8126331CC578C700B11D91 /* MainTableViewCellController.swift */,
+				AB81262F1CC5759200B11D91 /* MainTableViewController.swift */,
+				AB8126311CC575DF00B11D91 /* AddFoodItemViewController.swift */,
+				AB50F9CF1CC6292800911004 /* EditFoodItemViewController.swift */,
 				AB8126021CC5736D00B11D91 /* Main.storyboard */,
 				AB8126081CC5736D00B11D91 /* Assets.xcassets */,
 				AB81260A1CC5736D00B11D91 /* LaunchScreen.storyboard */,
@@ -259,8 +268,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB8126011CC5736D00B11D91 /* ViewController.swift in Sources */,
+				AB50F9D01CC6292800911004 /* EditFoodItemViewController.swift in Sources */,
+				AB8126301CC5759200B11D91 /* MainTableViewController.swift in Sources */,
+				AB8126321CC575DF00B11D91 /* AddFoodItemViewController.swift in Sources */,
 				AB8126071CC5736D00B11D91 /* FoodInMyFridge.xcdatamodeld in Sources */,
+				AB8126341CC578C700B11D91 /* MainTableViewCellController.swift in Sources */,
 				AB8125FF1CC5736D00B11D91 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -406,6 +418,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = FoodInMyFridge/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ANCoders.FoodInMyFridge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -417,6 +430,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = FoodInMyFridge/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ANCoders.FoodInMyFridge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -488,6 +502,7 @@
 				AB8126281CC5736D00B11D91 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AB8126291CC5736D00B11D91 /* Build configuration list for PBXNativeTarget "FoodInMyFridgeTests" */ = {
 			isa = XCConfigurationList;
@@ -496,6 +511,7 @@
 				AB81262B1CC5736D00B11D91 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AB81262C1CC5736D00B11D91 /* Build configuration list for PBXNativeTarget "FoodInMyFridgeUITests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +520,7 @@
 				AB81262E1CC5736D00B11D91 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

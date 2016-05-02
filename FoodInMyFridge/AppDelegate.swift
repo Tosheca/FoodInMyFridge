@@ -8,14 +8,27 @@
 
 import UIKit
 import CoreData
+import EventKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        
+        
+        let notificationSettings = UIUserNotificationSettings(forTypes: [.Badge, .Alert, .Sound], categories: nil)
+        UIApplication.sharedApplication().registerUserNotificationSettings(notificationSettings)
+        
+        let eventStore = EKEventStore()
+        
+        if EKEventStore.authorizationStatusForEntityType(.Event) != EKAuthorizationStatus.Authorized {
+            eventStore.requestAccessToEntityType(.Event, completion: {granted, error in})
+        }
+        
+        application.applicationIconBadgeNumber = 0
+        
         // Override point for customization after application launch.
         return true
     }
