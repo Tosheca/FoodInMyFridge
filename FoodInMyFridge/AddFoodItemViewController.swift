@@ -16,7 +16,6 @@ class AddFoodItemViewController: UIViewController, UIImagePickerControllerDelega
     
     var dateFormatter = NSDateFormatter()
     var strDate = String()
-    @IBOutlet weak var DatePicker: UIDatePicker!
     
     var coreData = [NSManagedObject]()
     
@@ -27,19 +26,16 @@ class AddFoodItemViewController: UIViewController, UIImagePickerControllerDelega
     @IBOutlet weak var ChoosePhoto: UIButton!
     @IBOutlet weak var CameraPhoto: UIButton!
     @IBOutlet weak var FoodItemImage: UIImageView!
+    @IBOutlet weak var DatePicker: UIDatePicker!
     @IBOutlet weak var DoneBtn: UIBarButtonItem!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        DatePicker.datePickerMode = UIDatePickerMode.Date
+        // Do any additional setup after loading the view.
         
+        DatePicker.datePickerMode = UIDatePickerMode.Date
         dateFormatter.dateFormat = "dd MM yyyy"
         strDate = dateFormatter.stringFromDate(DatePicker.date)
         DateLabel.text = strDate
-
-        //FoodItemImage.layer.borderWidth = 1
-        //FoodItemImage.layer.borderColor = UIColor.redColor().CGColor
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -57,8 +53,8 @@ class AddFoodItemViewController: UIViewController, UIImagePickerControllerDelega
         newFood.setValue(DateLabel.text, forKey: "foodItemsExpirationDates")
         newFood.setValue(base64String, forKey: "foodItemsPhotos")
         
-        
         do{
+            
             try managedContext.save()
             
             let alertController = UIAlertController(title: "Added!", message:
@@ -75,10 +71,7 @@ class AddFoodItemViewController: UIViewController, UIImagePickerControllerDelega
             alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
             
             self.presentViewController(alertController, animated: true, completion: nil)
-
         }
-        
-        
     }
    
     func alerthandler(){
@@ -102,6 +95,7 @@ class AddFoodItemViewController: UIViewController, UIImagePickerControllerDelega
         event.calendar = eventStore.defaultCalendarForNewEvents
         
         do{
+            
             try eventStore.saveEvent(event, span: .ThisEvent)
             
         }catch{
@@ -109,7 +103,6 @@ class AddFoodItemViewController: UIViewController, UIImagePickerControllerDelega
         }
         
         self.performSegueWithIdentifier("addedNewItem", sender: nil)
-        
     }
     
     @IBAction func CameraPhoto(sender: AnyObject) {
@@ -130,13 +123,12 @@ class AddFoodItemViewController: UIViewController, UIImagePickerControllerDelega
 
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         
-        
         FoodItemImage.image = (info[UIImagePickerControllerOriginalImage] as? UIImage)
         self.dismissViewControllerAnimated(false, completion: nil)
         
-        imageData = UIImageJPEGRepresentation(FoodItemImage.image!, 0.1)!
+        imageData = UIImageJPEGRepresentation(FoodItemImage.image!, 0.1)!// Взимам снимката като NSData с 10% от качеството й.
         
-        base64String = imageData.base64EncodedStringWithOptions(.Encoding64CharacterLineLength)
+        base64String = imageData.base64EncodedStringWithOptions(.Encoding64CharacterLineLength)// Преобразувам NSData-та, за да мога да я съхраня като string.
         
         if base64String != ""{
             

@@ -17,14 +17,10 @@ class MainTableViewCellController: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         
-        
-        //FoodImage.layer.borderWidth = 1
-        //FoodImage.layer.borderColor = UIColor.redColor().CGColor
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
     }
 

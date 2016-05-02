@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        
+        // Override point for customization after application launch.
         
         let notificationSettings = UIUserNotificationSettings(forTypes: [.Badge, .Alert, .Sound], categories: nil)
         UIApplication.sharedApplication().registerUserNotificationSettings(notificationSettings)
@@ -29,7 +29,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         application.applicationIconBadgeNumber = 0
         
-        // Override point for customization after application launch.
         return true
     }
 

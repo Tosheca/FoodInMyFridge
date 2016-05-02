@@ -17,21 +17,20 @@ class MainTableViewController: UITableViewController {
     let cal = NSCalendar.currentCalendar()
     var startDate = NSDate()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tableView.rowHeight = self.view.bounds.size.height*368/536
+        self.tableView.rowHeight = self.view.bounds.size.height*368/536// Регулирам размера на едната клетка спрямо екрана (отношението го взимам от default view-то в Main.storyboard)
         self.tableView.separatorInset.left = 15
         self.tableView.separatorInset.right = 15
         self.tableView.separatorColor = UIColor.grayColor()
         
-        
         fetchData()
+        
         dateFormatter.dateFormat = "dd MM yyyy"
         
         let stringStartDate = dateFormatter.stringFromDate(startDate)
-        startDate = dateFormatter.dateFromString(stringStartDate)!
+        startDate = dateFormatter.dateFromString(stringStartDate)!// Правя сегашната дата в подходящ формат за да я сравня по-късно с крайната дата (срока на годност).
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -57,7 +56,7 @@ class MainTableViewController: UITableViewController {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell_1", forIndexPath: indexPath) as! MainTableViewCellController
         
-        let decodedData = NSData(base64EncodedString: coreData[indexPath.row].valueForKey("foodItemsPhotos") as! String, options: NSDataBase64DecodingOptions.IgnoreUnknownCharacters)
+        let decodedData = NSData(base64EncodedString: coreData[indexPath.row].valueForKey("foodItemsPhotos") as! String, options: NSDataBase64DecodingOptions.IgnoreUnknownCharacters)// Преобразувам string-а с данните за снимката в NSData.
         
         let endDate = dateFormatter.dateFromString(coreData[indexPath.row].valueForKey("foodItemsExpirationDates") as! String)
         
@@ -86,20 +85,17 @@ class MainTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
         self.performSegueWithIdentifier("editItemSegue", sender: nil)
-        
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-        if (segue.identifier == "editItemSegue"){
+        if segue.identifier == "editItemSegue" {
             
             let indexPath = self.tableView.indexPathForSelectedRow
         
             let DestViewController = segue.destinationViewController as! EditFoodItemViewController
             DestViewController.currentIndex = (indexPath?.row)!
-        
         }
-        
     }
     
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
@@ -134,7 +130,6 @@ class MainTableViewController: UITableViewController {
                 
                 self.presentViewController(alertController, animated: true, completion: nil)
             }
-            
         }
     }
     
@@ -152,7 +147,6 @@ class MainTableViewController: UITableViewController {
         }catch{
             print("error")
         }
-    
     }
     
     /*

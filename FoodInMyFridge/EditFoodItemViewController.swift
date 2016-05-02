@@ -32,12 +32,13 @@ class EditFoodItemViewController: UIViewController, UIImagePickerControllerDeleg
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Do any additional setup after loading the view.
         
         fetchData()
         
         base64string = coreData[currentIndex].valueForKey("foodItemsPhotos") as! String
         
-        let decodedData = NSData(base64EncodedString: base64string, options: NSDataBase64DecodingOptions.IgnoreUnknownCharacters)
+        let decodedData = NSData(base64EncodedString: base64string, options: NSDataBase64DecodingOptions.IgnoreUnknownCharacters)// Преобразувам string-а с данните за снимката в NSData.
         FoodItemPhoto.image = UIImage(data: decodedData!)
         
         DatePicker.datePickerMode = UIDatePickerMode.Date
@@ -45,8 +46,6 @@ class EditFoodItemViewController: UIViewController, UIImagePickerControllerDeleg
         DatePicker.date = dateFormatter.dateFromString(coreData[currentIndex].valueForKey("foodItemsExpirationDates") as! String)!
         strDate = dateFormatter.stringFromDate(DatePicker.date)
         DateLabel.text = strDate
-        
-        // Do any additional setup after loading the view.
     }
     @IBAction func CameraBtn(sender: AnyObject) {
         
@@ -65,13 +64,12 @@ class EditFoodItemViewController: UIViewController, UIImagePickerControllerDeleg
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         
-        
         FoodItemPhoto.image = (info[UIImagePickerControllerOriginalImage] as? UIImage)
         self.dismissViewControllerAnimated(false, completion: nil)
         
-        imageData = UIImageJPEGRepresentation(FoodItemPhoto.image!, 0.1)!
+        imageData = UIImageJPEGRepresentation(FoodItemPhoto.image!, 0.1)!// Взимам снимката като NSData с 10% от качеството й.
         
-        base64string = imageData.base64EncodedStringWithOptions(.Encoding64CharacterLineLength)
+        base64string = imageData.base64EncodedStringWithOptions(.Encoding64CharacterLineLength)// Преобразувам NSData-та, за да мога да я съхраня като string.
         
         if base64string != ""{
             
@@ -120,7 +118,6 @@ class EditFoodItemViewController: UIViewController, UIImagePickerControllerDeleg
         }catch{
             print("error")
         }
-
     }
 
     
@@ -152,7 +149,6 @@ class EditFoodItemViewController: UIViewController, UIImagePickerControllerDeleg
         }catch{
             print("error")
         }
-        
     }
 
     /*
